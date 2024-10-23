@@ -10,7 +10,7 @@ void setup() {
 }
 
 void loop() {
-    if (Serial.avalable()){
+    if (Serial.available()){
         String data = Serial.readStringUntil('\n');
         Serial.flush();
 
@@ -18,5 +18,7 @@ void loop() {
         lcd.clear();
         lcd.setCursor(0, 0);
         lcd.print("Please call:");
+        lcd.setCursor(0,1);
+        lcd.print(data);
     }
 }
